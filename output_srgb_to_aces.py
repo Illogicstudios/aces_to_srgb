@@ -12,7 +12,7 @@ def output_srgb_to_aces(input_path):
             # Retrieve the sequence and the range of frames
             for child_name in os.listdir(input_path):
                 path = os.path.join(input_path, child_name)
-                match = re.match(r"^(.+[\\\/][\w\.]*\.)([0-9]{4})(\.\w+)$", path)
+                match = re.match(r"^(.+[\\\/][\w\.]*)([0-9]{4})(\.\w+)$", path)
                 if not match:
                     continue
                 if input_file is None:
