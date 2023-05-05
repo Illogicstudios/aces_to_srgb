@@ -35,7 +35,8 @@ def output_srgb_to_aces(input_path):
             os.system("pause")
             return
         input_dirname, input_basename = os.path.split(input_file)
-        output_file = os.path.join(input_dirname, "output_srgb", input_basename).replace("\\", "/")
+        input_basename_without_ext = ".".join(input_basename.split(".")[:-1])
+        output_file = os.path.join(input_dirname, "output_srgb", input_basename_without_ext+".exr").replace("\\", "/")
         # Create Reader
         reader = app.createReader(input_file)
         # Change Input Colorspace to sRGB (index 105)
